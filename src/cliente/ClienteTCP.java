@@ -8,8 +8,6 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import javax.print.DocFlavor.CHAR_ARRAY;
-
 /**
  * TODO: Complementa esta clase para que genere la conexión TCP con el servidor
  * para enviar un boleto, recibir la respuesta y finalizar la sesion

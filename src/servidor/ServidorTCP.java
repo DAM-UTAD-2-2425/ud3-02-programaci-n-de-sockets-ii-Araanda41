@@ -89,7 +89,32 @@ public class ServidorTCP {
 	 * @return Debe devolver una de las posibles respuestas configuradas
 	 */
 	public String comprobarBoleto() {
+		// primero debo comprobar que el boleto sea valido antes de ponerme a comprobar
+		// el premio
+		boolean boletoValido = true;
 		String respuesta = "";
+
+		// compruebo que sea valido comprobando que no se repitan numeros
+		for (int i = 0; i < combinadaCliente.length; i++) {
+			if (combinadaCliente[i] == combinadaCliente[i + 1]) {
+				boletoValido = false;
+				respuesta = this.respuesta[0];
+			}
+		}
+
+		// hago un bucle while para que se compruebe siempre si es valido, ya que se
+		// puede dar el caso de que el número que se escriba en el boleto no vaya del 0
+		// -49 y hay que comprobarlo siempre
+		while (boletoValido) {
+			// tendré que iterar sobre todos los numeros del boleto que me envía el cliente
+			// y compararlo con el que ha salido premiado para ver cual es el resultado
+			for (int i = 0; i < combinadaCliente.length; i++) {
+				for (int j = 0; j < combinacion.length; j++) {
+
+				}
+			}
+		}
+
 		return respuesta;
 	}
 
@@ -97,7 +122,9 @@ public class ServidorTCP {
 	 * @param respuesta se debe enviar al ciente
 	 */
 	public void enviarRespuesta(String respuesta) {
-
+		// envio la respuesta al cliente y se almacenará en la variable respuesta de la
+		// clase ClienteTCP
+		salida.print(respuesta);
 	}
 
 	/**
